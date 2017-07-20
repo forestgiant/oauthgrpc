@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ticktick.pb;
+option go_package = "pb";
+
+service TickTick {
+  rpc GetMessages(ReadMessagesRequest) returns (stream TickTickMessage) {}
+}
+message TickTickMessage {
+  string message = 1;
+}
+
+message ReadMessagesRequest{}
