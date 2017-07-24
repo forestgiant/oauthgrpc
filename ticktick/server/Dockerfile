@@ -8,15 +8,12 @@ ENV PORT 9001
 ENV NAME TICKDOCK
 ENV TPS 2
 
-
-
 RUN apt-get update
 RUN apt-get install -y build-essential
 RUN apt-get install -y git
 RUN apt-get install -y golang
-RUN go get -v -d github.com/thales17/oauthgrpc
-RUN cd /go/src/github.com/thales17/oauthgrpc/ticktick/server
-RUN go install
+RUN go get -v -d github.com/thales17/oauthgrpc/ticktick/server
+RUN cd /go/src/github.com/thales17/oauthgrpc/ticktick/server && go install
 RUN rm -rf /go/pkg /go/src /usr/local/go
 
 EXPOSE $PORT
