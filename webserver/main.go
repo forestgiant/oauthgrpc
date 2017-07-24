@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"log"
 
-	"gitlab.fg/go/oauthgrpc/ticktick/api"
+	"github.com/thales17/oauthgrpc/ticktick/api"
 )
 
 var (

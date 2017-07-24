@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"gitlab.fg/go/oauthgrpc/ticktick/pb"
+	"github.com/thales17/oauthgrpc/ticktick/pb"
 
 	"net"
 	"sync"
