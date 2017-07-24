@@ -85,7 +85,7 @@ func (s *tickTickServer) GetMessages(req *pb.ReadMessagesRequest, stream pb.Tick
 func newTickTickServer(name string, duration time.Duration) *tickTickServer {
 	f := &tickTickServer{name: name, duration: duration}
 	f.val = 0
-	f.ticker = time.NewTicker(time.Second * 1)
+	f.ticker = time.NewTicker(duration)
 	// Start the ticker for the server
 	go func() {
 		for _ = range f.ticker.C {
