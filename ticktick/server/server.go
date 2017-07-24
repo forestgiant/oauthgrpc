@@ -91,6 +91,7 @@ func newTickTickServer(name string, duration time.Duration) *tickTickServer {
 		for _ = range f.ticker.C {
 			f.mutex.Lock()
 			f.val++
+			log.Printf("%s: %d\n", name, f.val)
 			for _, c := range f.clients {
 				c.val <- f.val
 			}
@@ -106,6 +107,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
+	log.Printf("Starting ticktick services on port: %d with name: %s and ticks per second: %d\n", *port, *name, *tps)
 	grpcServer := grpc.NewServer()
 	pb.RegisterTickTickServer(grpcServer, newTickTickServer(*name, time.Second*time.Duration((*tps))))
 	grpcServer.Serve(lis)
