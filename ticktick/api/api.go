@@ -2,6 +2,7 @@ package api
 
 import (
 	"context"
+	"log"
 
 	"io"
 
@@ -31,7 +32,7 @@ func (c *Client) GetMessages(callback func(string)) error {
 			}
 			if err != nil {
 				cancelFunc()
-				return
+				log.Fatal(err)
 			}
 			if callback != nil {
 				callback(rs.Message)
