@@ -15,6 +15,7 @@ var (
 
 func main() {
 	flag.Parse()
+	log.Printf("Tick webserver connecting to: %s\n", *address)
 	ctx, cancelFunc := context.WithCancel(context.Background())
 	tickTickClient, err := api.NewClient(ctx, *address, nil)
 	if err != nil {
