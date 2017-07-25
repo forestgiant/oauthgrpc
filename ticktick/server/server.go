@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/thales17/oauthgrpc/ticktick/pb"
+	"github.com/forestgiant/oauthgrpc/ticktick/pb"
 
 	"net"
 	"sync"

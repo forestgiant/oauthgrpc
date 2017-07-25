@@ -6,7 +6,7 @@ import (
 
 	"io"
 
-	"github.com/thales17/oauthgrpc/ticktick/pb"
+	"github.com/forestgiant/oauthgrpc/ticktick/pb"
 	"google.golang.org/grpc"
 )
 
